@@ -50,13 +50,13 @@ $(document).ready(function(){
           console.log(match);
           document.getElementById('pondImages').innerHTML = '';
           $.each(match,function(i,val){
-          var x = document.createElement("IMG");
-          x.setAttribute("src", "public/image/"+match[i]+".jpg");
-          x.setAttribute("width", "180");
-          x.setAttribute("height", "180");
-          x.setAttribute("style", "display:block");
-        
-          var id=document.getElementById('pondImages').appendChild(x);
+            var x = document.createElement("IMG");
+            x.setAttribute("src", "public/image/"+match[i]+".jpg");
+            x.setAttribute("width", "180");
+            x.setAttribute("height", "180");
+            x.setAttribute("style", "display:block");
+          
+            var id=document.getElementById('pondImages').appendChild(x);
          
           
           });

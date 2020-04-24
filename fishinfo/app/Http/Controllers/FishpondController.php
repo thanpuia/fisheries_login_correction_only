@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Fishpond;
-use Illuminate\Http\Request;
 use App\Location;
+use Illuminate\Http\Request;
 
 
 class FishpondController extends Controller

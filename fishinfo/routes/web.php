@@ -10,14 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    //$districts=Location::pluck('district','district');
+    // return view('map.map',compact('districts'));
+    return view('welcome');
+});
+
+Route::get('/map/all', function () {
     //$districts=Location::pluck('district','district');
     // return view('map.map',compact('districts'));
     return view('map.map');
 });
 
-Route::get('/aizawl',function(){
+Route::get('/map/aizawl',function(){
     return view('map.aizawl');
 });
 Auth::routes();
