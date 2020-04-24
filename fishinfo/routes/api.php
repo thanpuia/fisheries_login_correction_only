@@ -16,11 +16,12 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+    
 
-Route::post('login', 'PassportController@login');
-Route::post('register', 'PassportController@register');
- 
-Route::middleware('auth:api')->group(function () {
+    Route::post('login', 'PassportController@login');
+    Route::post('register', 'PassportController@register');
+    
+    Route::middleware('auth:api')->group(function () {
     Route::get('user', 'PassportController@details');
  
     Route::post('fishponds/create', 'FishpondController@store');
@@ -30,10 +31,27 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/fishponds/pondlist','FishpondController@pondList');
     Route::post('/fishponds/search','FishpondController@search');
 
-
-
     Route::get('schemes','SchemeController@listOfSchemes');
-
 
     Route::get('tehsils','TehsilController@listOfTehsils');
 });
+
+Route::post('/searchPonds','FishPondController@searchPonds');
+Route::post('/searchTehsil','FishPondController@searchTehsil');
+Route::post('/searchPondsAizawl','FishPondController@searchPondsAizawl');
+
+Route::post('/findPond/{id}','FishPondController@findPond');
+Route::post('/findImages/{id}','FishPondController@findImages');
+
+
+// new 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/schemes','SchemeController@index')->name('scheme.index');
+Route::get('schemes/edit/{id}')->name('scheme.edit');
+Route::get('schemes/delete/{id}')->name('scheme.delete');
+Route::post('schemes/create','SchemeController@store')->name('schemes.create');
+
+
+Route::get('/tehsils','TehsilController@index')->name('tehsil.index');
+Route::post('/tehsils/create','TehsilController@store')->name('tehsil.create');

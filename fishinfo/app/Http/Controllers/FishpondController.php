@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Fishpond;
+use Illuminate\Http\Request;
+use App\Location;
 
 
 class FishpondController extends Controller
@@ -223,5 +224,59 @@ class FishpondController extends Controller
                 'data' => $searchresult,
                 'message' => 'success'
             ], 500);
+    }
+
+
+
+    public function searchPonds(Request $request)
+    {
+        // $lat=$request->lat;
+        // $lng=$request->lng;
+
+        // $ponds=Fishpond::whereBetween('lat',[$lat-0.9,$lat+0.9])
+        //     ->whereBetween('lng',[$lng-0.9,$lng+0.9])->get();
+        $ponds=Fishpond::get();
+        return $ponds;
+    }
+
+    public function searchCity(Request $request)
+    {
+        $locationVal=$request->locationVal;
+        $matchedTehsils=Fishpond::where('tehsil','like',"%$locationVal%")->pluck('tehsil','tehsil');
+        //return response()->json(['items'=>$matchedTehsils]);
+        return view('ajxresult',compact('matchedTehsils'));
+    }
+
+    public function getAll()
+    {
+        $ponds=DB::table('fishponds')->get();
+        // dd($girls);
+        return response()->json($ponds);
+    }
+
+    public function searchTehsil(Request $request)
+    {
+        $distval=$request->distval;
+        $matchedTehsils=Location::where('district',$distval)->pluck('tehsil','tehsil');
+
+        return view('ajaxresult',['matchedTehsils'=>$matchedTehsils]);
+    }
+
+    public function searchPondsAizawl(){
+        $ponds=Fishpond::where('district','aizawl')->get();
+        return $ponds;  
+    }
+
+    public function findPond($id)
+    {
+        $pondDetail=Fishpond::findOrFail($id);
+        return $pondDetail;
+    }
+
+    public function findImages($id)
+    {
+        $data=Fishpond::find($id);
+        $images = explode(',',$data->image);
+        return $images;
     }
 }

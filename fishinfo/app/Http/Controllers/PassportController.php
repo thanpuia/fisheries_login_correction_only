@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class PassportController extends Controller
 {
     /**
@@ -43,12 +45,17 @@ class PassportController extends Controller
             'contact' => $request->contact,
             'password' => $request->password
         ];
- 
+        $user = DB::table('users')->where('contact', $request->contact)->first();
         if (auth()->attempt($credentials)) {
             $token = auth()->user()->createToken('Fisheries')->accessToken;
-            return response()->json(['token' => $token], 200);
+            return response()->json(['success'=>'true',
+            'token' => $token,
+            'id'=>$user->id,
+            'contact'=>$request->contact,
+            'name'=>$user->name,
+        ], 200);
         } else {
-            return response()->json(['error' => 'UnAuthorised'], 401);
+            return response()->json(['success'=>'false','error' => 'UnAuthorised'], 401);
         }
     }
 }

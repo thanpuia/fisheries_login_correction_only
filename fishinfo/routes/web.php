@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //$districts=Location::pluck('district','district');
+    // return view('map.map',compact('districts'));
+    return view('map.map');
 });
 
+Route::get('/aizawl',function(){
+    return view('map.aizawl');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
