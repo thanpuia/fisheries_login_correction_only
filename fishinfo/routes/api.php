@@ -42,6 +42,7 @@ Route::post('/searchPondsAizawl','FishPondController@searchPondsAizawl');
 
 Route::post('/findPond/{id}','FishPondController@findPond');
 Route::post('/findImages/{id}','FishPondController@findImages');
+Route::post('/findPropic/{id}','FishPondController@findPropic');
 
 
 // new 

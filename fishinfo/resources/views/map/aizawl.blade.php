@@ -51,21 +51,41 @@
     <div>
         <div class="sidenav" id="mySidenav" >
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="mainframe left-space">
-                <div class="leftframe">District:</div>
-                <div class="rightframe" id="district">____</div>
+            <div class="">
+                <div class="container">
+                    <div class="row left-space">
+                        <div class="col-4">
+                            <div id="propic"></div>
+                        </div>
+                        <div class="col-8">
+                            <b><div id="fname"></div></b>
+                            <div id="address"></div>
+                            <div id="district"></div>
+                        </div>
+                    </div>
+                  </div>
             </div>
-            <br>
+            
             <div class="mainframe left-space">
-                <div class="leftframe">Address:</div>
-                <div class="rightframe" id="address">____</div>
+                <div class="leftframe">Father's Name:</div>
+                <div class="rightframe" id="id"></div>
             </div>
-            <br>
+          
             <div class="mainframe left-space">
-                <div class="leftframe"> Images:</div>
-                <div class="rightframe" id="pondImages"></div>
+                <div class="leftframe">EPIC:</div>
+                <div class="rightframe" id="epic_no"></div>
             </div>
-            <br>
+
+            <div class="mainframe left-space">
+                <div class="leftframe">Tehsil</div>
+                <div class="rightframe" id="tehsil"></div>
+            </div>
+            
+            <div class="mainframe left-space">
+                <div class=""> Pond Images:</div>
+                <div class="" id="pondImages"></div>
+            </div>
+           
             
         </div>
 

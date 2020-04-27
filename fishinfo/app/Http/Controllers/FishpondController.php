@@ -277,7 +277,14 @@ class FishpondController extends Controller
     public function findImages($id)
     {
         $data=Fishpond::find($id);
-        $images = explode(',',$data->image);
+        $images = explode(',',$data->pondImages);
         return $images;
+    }
+
+    public function findPropic($id)
+    {
+        $data=Fishpond::find($id);
+        $image=$data->image;
+        return $image;
     }
 }
