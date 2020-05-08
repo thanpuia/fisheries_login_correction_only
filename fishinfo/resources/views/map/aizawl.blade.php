@@ -52,40 +52,48 @@
         <div class="sidenav" id="mySidenav" >
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="">
-                <div class="container">
+                <div class="container" style="background:#DCDCDC">
                     <div class="row left-space">
                         <div class="col-4">
-                            <div id="propic"></div>
+                            <div id="propic" style="border-radius: 50%;"></div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-8" style="padding-top:9px">
                             <b><div id="fname"></div></b>
                             <div id="address"></div>
                             <div id="district"></div>
                         </div>
                     </div>
-                  </div>
+                </div>
             </div>
             
-            <div class="mainframe left-space">
+            <div class="mainframe left-space sidenavmargindetails mt-3">
                 <div class="leftframe">Father's Name:</div>
                 <div class="rightframe" id="id"></div>
             </div>
           
-            <div class="mainframe left-space">
+            <div class="mainframe left-space sidenavmargindetails">
                 <div class="leftframe">EPIC:</div>
                 <div class="rightframe" id="epic_no"></div>
             </div>
 
-            <div class="mainframe left-space">
+            <div class="mainframe left-space sidenavmargindetails">
                 <div class="leftframe">Tehsil</div>
                 <div class="rightframe" id="tehsil"></div>
             </div>
             
             <div class="mainframe left-space">
-                <div class=""> Pond Images:</div>
+                <div class="sidenavmargindetails mb-3"> Pond Images:</div>
                 <div class="" id="pondImages"></div>
             </div>
-           
+            
+
+            <div class="mainframe left-space">
+                <div style="position:absolute;bottom:0;width:100%;height:70px;margin-left:15%">
+                    <img src="/public/image/indiaLogo.png" height="50" width="50" style="margin-left:22% !important;border-radius: 50%;">
+                    <div style="font-size:10px;">Directorate of Fisheries, Government of Mizoram</div>
+                </div>
+                
+            </div>
             
         </div>
 

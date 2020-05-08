@@ -48,7 +48,7 @@ $(document).ready(function(){
             x.setAttribute("width", "80");
             x.setAttribute("height", "80");
             
-            x.setAttribute("style", "display:block");
+            x.setAttribute("style", "display:block;border-radius:50%;margin:9px 9px");
           
             var id=document.getElementById('propic').appendChild(x);
       });
@@ -70,8 +70,8 @@ $(document).ready(function(){
           $.each(match,function(i,val){
             var x = document.createElement("IMG");
             x.setAttribute("src", "/public/image/"+match[i]+".jpg");
-            x.setAttribute("width", "180");
-            x.setAttribute("height", "180");
+            x.setAttribute("width", "300");
+            x.setAttribute("height", "90");
             x.setAttribute("style", "display:block");
           
             var id=document.getElementById('pondImages').appendChild(x);
